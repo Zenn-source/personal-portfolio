@@ -10,11 +10,13 @@ export const PROFILE = {
   github: "https://github.com/Zenn-source",
   resume:
     "https://drive.google.com/file/d/1J4X0KijfTlASI-bfqXcjT3pIznR4FJtu/view",
+  photo: "/images/profile.jpg",
 };
 
 export const NAV = [
   { label: "Experience", href: "#experience" },
   { label: "Work", href: "#work" },
+  { label: "Stack", href: "#stack" },
   { label: "About", href: "#about" },
   { label: "Process", href: "#process" },
 ];
