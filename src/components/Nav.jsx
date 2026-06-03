@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { PROFILE, NAV } from "../data/content";
 
+
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [compact, setCompact] = useState(false);
@@ -23,8 +24,14 @@ export default function Nav() {
       <nav className="pointer-events-auto flex items-center gap-1 rounded-full border border-zinc-800/80 bg-[#0f0f14]/90 px-2 py-1.5 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.6)] backdrop-blur-xl transition-all duration-300">
         {/* Avatar + name */}
         <a href="#top" className="flex items-center gap-2.5 rounded-full px-2 py-1 transition-colors hover:bg-zinc-800">
-          <span className="flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-full border border-zinc-700 bg-zinc-800 text-[10px] font-bold text-zinc-400">
-            {PROFILE.monogram}
+          <span className="flex h-9 w-9 shrink-0 overflow-hidden rounded-full border border-zinc-700 bg-zinc-800">
+            {PROFILE.photo ? (
+              <img src={PROFILE.photo} alt={PROFILE.name} className="h-full w-full object-cover object-top" />
+            ) : (
+              <span className="flex h-full w-full items-center justify-center text-[10px] font-bold text-zinc-400">
+                {PROFILE.monogram}
+              </span>
+            )}
           </span>
           <span className="text-[15px] font-semibold tracking-tight text-zinc-100">
             {PROFILE.name.split(" ")[0]}{" "}
