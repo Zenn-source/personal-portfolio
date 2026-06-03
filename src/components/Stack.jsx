@@ -3,7 +3,7 @@ import { Reveal, TwoTone, ScriptLabel } from "./ui";
 
 export default function Stack() {
   return (
-    <section id="about" className="border-t border-zinc-800 px-6 py-20 sm:px-10 sm:py-28">
+    <section id="stack" className="border-t border-zinc-800 px-6 py-20 sm:px-10 sm:py-28">
       <div className="mx-auto max-w-6xl">
         <Reveal className="mb-3">
           <ScriptLabel className="text-2xl">my toolkit</ScriptLabel>
