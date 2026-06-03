@@ -5,20 +5,20 @@ import { Reveal, TwoTone, ScriptLabel, AppIcon } from "./ui";
 
 function ExperienceCard({ job, open, onToggle }) {
   return (
-    <Reveal className="overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-[0_12px_34px_-26px_rgba(0,0,0,0.4)]">
+    <Reveal className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900 shadow-[0_12px_34px_-26px_rgba(0,0,0,0.6)]">
       <button onClick={onToggle} className="flex w-full items-center gap-4 p-5 text-left">
         <AppIcon glyph={job.glyph} size={44} />
         <div className="min-w-0 flex-1">
-          <div className="truncate text-[17px] font-semibold tracking-tight text-zinc-900">
+          <div className="truncate text-[17px] font-semibold tracking-tight text-zinc-100">
             {job.role}
           </div>
-          <div className="mt-0.5 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-400">
+          <div className="mt-0.5 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
             <span>{job.range}</span>
-            <span className="text-zinc-300">✦</span>
+            <span className="text-zinc-700">✦</span>
             <span className="truncate">{job.org}</span>
           </div>
         </div>
-        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-500">
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-zinc-700 text-zinc-500">
           {open ? <Minus size={15} /> : <Plus size={15} />}
         </span>
       </button>
@@ -27,12 +27,12 @@ function ExperienceCard({ job, open, onToggle }) {
         style={{ gridTemplateRows: open ? "1fr" : "0fr", opacity: open ? 1 : 0 }}
       >
         <div className="min-h-0">
-          <div className="border-t border-zinc-100 px-5 py-5 sm:pl-16">
-            <p className="text-[14px] font-semibold leading-relaxed text-zinc-700">{job.summary}</p>
+          <div className="border-t border-zinc-800 px-5 py-5 sm:pl-16">
+            <p className="text-[14px] font-semibold leading-relaxed text-zinc-300">{job.summary}</p>
             <ul className="mt-3 space-y-2">
               {job.points.map((pt, j) => (
-                <li key={j} className="flex gap-2.5 text-[14px] leading-relaxed text-zinc-500">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-300" />
+                <li key={j} className="flex gap-2.5 text-[14px] leading-relaxed text-zinc-400">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-600" />
                   <span className="text-pretty">{pt}</span>
                 </li>
               ))}
@@ -48,7 +48,7 @@ export default function Experience() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="experience" className="border-t border-zinc-200 px-6 py-20 sm:px-10 sm:py-28">
+    <section id="experience" className="border-t border-zinc-800 px-6 py-20 sm:px-10 sm:py-28">
       <div className="mx-auto max-w-4xl">
         <Reveal className="mb-3">
           <ScriptLabel className="text-2xl">the change-log</ScriptLabel>
