@@ -1,16 +1,39 @@
-# React + Vite
+# Mackenzie Iguiron — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio built with React + Vite + Tailwind CSS v4.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **Vite** — component-based SPA
+- **Tailwind CSS v4** — utility styling via `@tailwindcss/vite` (no config file)
+- **Lucide React** — UI icons
+- **Devicon + Simple Icons** — tech stack logos
+- **General Sans** (Fontshare) + **JetBrains Mono** (Google Fonts)
 
-## React Compiler
+## Run locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev       # http://localhost:5173
+npm run build     # production build → dist/
+npm run preview   # preview the dist/ build
+```
 
-## Expanding the ESLint configuration
+## Project images
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Drop screenshots into `public/images/` matching these filenames:
+
+| File | Used in |
+|------|---------|
+| `todago.png` | Work section |
+| `karensderya.png` | Work section |
+| `mediguard.png` | Work section |
+| `todago-hero.png` | Hero fan stack |
+| `karensderya-hero.png` | Hero fan stack |
+| `mediguard-hero.png` | Hero fan stack |
+
+Cards fall back to gradient placeholders if files are missing.
+
+## Content
+
+All copy and structured data lives in `src/data/content.js`. Edit that file to update profile info, projects, experience, stack, and nav links — no component changes needed.
