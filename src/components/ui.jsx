@@ -43,7 +43,7 @@ export function TwoTone({ parts, className = "" }) {
   return (
     <span className={className}>
       {parts.map((p, i) => (
-        <span key={i} style={{ color: p.mute ? "#a1a1aa" : "#18181b" }}>{p.t}</span>
+        <span key={i} style={{ color: p.mute ? "#52525b" : "#fafafa" }}>{p.t}</span>
       ))}
     </span>
   );
@@ -52,7 +52,7 @@ export function TwoTone({ parts, className = "" }) {
 /* Sacramento script accent label */
 export function ScriptLabel({ children, className = "" }) {
   return (
-    <span className={`font-script ${className}`} style={{ lineHeight: 1, color: "#a1a1aa" }}>
+    <span className={`font-script ${className}`} style={{ lineHeight: 1, color: "#71717a" }}>
       {children}
     </span>
   );
@@ -80,8 +80,8 @@ export function GlossyIcon({ Icon, size = 52, icon = 22 }) {
 /* Letterspaced caps chip */
 export function Chip({ children }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white/70 px-3.5 py-1.5">
-      <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-zinc-600">
+    <span className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800/70 px-3.5 py-1.5">
+      <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-zinc-400">
         {children}
       </span>
     </span>
@@ -95,7 +95,7 @@ export function PillButton({ children, href = "#", Icon, target }) {
       href={href}
       target={target}
       rel={target ? "noreferrer" : undefined}
-      className="group inline-flex items-center gap-2.5 rounded-full bg-zinc-900 px-6 py-3.5 text-[15px] font-medium text-white shadow-[0_10px_24px_-8px_rgba(0,0,0,0.5)] transition-all duration-200 hover:opacity-90"
+      className="group inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3.5 text-[15px] font-medium text-zinc-900 shadow-[0_10px_24px_-8px_rgba(0,0,0,0.5)] transition-all duration-200 hover:opacity-90"
     >
       {children}
       {Icon && (
@@ -112,7 +112,7 @@ export function PillButton({ children, href = "#", Icon, target }) {
 export function AppIcon({ glyph, size = 48 }) {
   return (
     <span
-      className="flex shrink-0 items-center justify-center rounded-2xl border border-zinc-200 bg-white text-zinc-900 shadow-[0_6px_16px_-8px_rgba(0,0,0,0.25)]"
+      className="flex shrink-0 items-center justify-center rounded-2xl border border-zinc-700 bg-zinc-800 text-zinc-100 shadow-[0_6px_16px_-8px_rgba(0,0,0,0.5)]"
       style={{ width: size, height: size }}
     >
       <span className="text-[15px] font-bold tracking-tight">{glyph}</span>
