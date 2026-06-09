@@ -1,15 +1,32 @@
+import { useState, useEffect } from "react";
 import { PROFILE, NAV } from "../data/content";
 import { Github, Linkedin } from "./ui";
 
+const VERBS = ["build", "create", "ship", "craft", "design"];
+
 export default function Footer() {
   const year = new Date().getFullYear();
-  const wordmark = PROFILE.name.split(" ").pop().toUpperCase();
+  const [verbIdx, setVerbIdx] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => setVerbIdx((i) => (i + 1) % VERBS.length), 1500);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <footer id="contact" className="relative overflow-hidden bg-zinc-950 text-white">
       <div className="mx-auto max-w-6xl px-6 pt-24 sm:px-10 sm:pt-32">
         <h2 className="max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.02em] sm:text-6xl">
-          <span className="text-white">Let's build something </span>
+          <span className="text-white">
+            Let's{" "}
+            <span
+              key={verbIdx}
+              className="word-in inline-block text-indigo-400"
+            >
+              {VERBS[verbIdx]}
+            </span>{" "}
+            something{" "}
+          </span>
           <span className="text-zinc-600">solid together.</span>
         </h2>
 
@@ -48,7 +65,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 h-px w-full bg-zinc-800" />
+        <div className="mt-14 h-px w-full bg-zinc-700" />
 
         <div className="flex flex-col gap-6 py-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
@@ -66,19 +83,6 @@ export default function Footer() {
             </div>
           </div>
           <div className="font-mono text-[12px] text-zinc-600">© {year} {PROFILE.name}</div>
-        </div>
-      </div>
-
-      {/* Giant wordmark */}
-      <div className="pointer-events-none select-none px-2 pb-2">
-        <div
-          className="text-center font-semibold leading-[0.8] tracking-[-0.03em] text-white"
-          style={{
-            fontSize: "clamp(4rem, 19vw, 19rem)",
-            textShadow: "0 0 80px rgba(255,255,255,0.2)",
-          }}
-        >
-          {wordmark}
         </div>
       </div>
     </footer>

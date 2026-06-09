@@ -5,16 +5,16 @@ import { Reveal, TwoTone, ScriptLabel, PillButton } from "./ui";
 
 function AccordionItem({ item, open, onToggle }) {
   return (
-    <div className="border-b border-zinc-200">
+    <div className="border-b border-zinc-800">
       <button
         onClick={onToggle}
         className="flex w-full items-center justify-between gap-4 py-5 text-left"
       >
         <span className="flex items-center gap-4">
-          <span className="font-mono text-[13px] text-zinc-400">{item.n}</span>
-          <span className="text-[19px] font-semibold tracking-tight text-zinc-900">{item.title}</span>
+          <span className="font-mono text-[13px] text-zinc-600">{item.n}</span>
+          <span className="text-[19px] font-semibold tracking-tight text-zinc-100">{item.title}</span>
         </span>
-        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-zinc-200 text-zinc-500">
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-zinc-700 text-zinc-500">
           {open ? <Minus size={15} /> : <Plus size={15} />}
         </span>
       </button>
@@ -23,7 +23,7 @@ function AccordionItem({ item, open, onToggle }) {
         style={{ gridTemplateRows: open ? "1fr" : "0fr", opacity: open ? 1 : 0 }}
       >
         <div className="min-h-0">
-          <p className="pb-5 pl-9 pr-10 text-pretty text-[15px] leading-relaxed text-zinc-500">
+          <p className="pb-5 pl-9 pr-10 text-pretty text-[15px] leading-relaxed text-zinc-400">
             {item.body}
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function Philosophy() {
   const [open, setOpen] = useState(0);
 
   return (
-    <section id="process" className="border-t border-zinc-200 bg-white/40 px-6 py-20 sm:px-10 sm:py-28">
+    <section id="process" className="border-t border-zinc-800 bg-zinc-900/40 px-6 py-20 sm:px-10 sm:py-28">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-14 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <Reveal className="mb-3">
@@ -58,16 +58,16 @@ export default function Philosophy() {
         </div>
 
         <Reveal delay={100}>
-          <div className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-[0_30px_70px_-40px_rgba(0,0,0,0.4)]">
-            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-zinc-900 text-lg font-semibold text-white">
+          <div className="rounded-3xl border border-zinc-800 bg-zinc-900 p-8 shadow-[0_30px_70px_-40px_rgba(0,0,0,0.6)]">
+            <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-lg font-semibold text-zinc-900">
               {PROFILE.monogram}
             </span>
             <h3 className="mt-6 text-3xl font-semibold leading-tight tracking-tight">
-              <span className="text-zinc-400">Curious about my work?</span>
+              <span className="text-zinc-600">Curious about my work?</span>
               <br />
-              <span className="text-zinc-900">Find me on LinkedIn</span>
+              <span className="text-zinc-100">Find me on LinkedIn</span>
             </h3>
-            <p className="mt-4 text-[15px] leading-relaxed text-zinc-500">
+            <p className="mt-4 text-[15px] leading-relaxed text-zinc-400">
               Always up for a conversation about secure systems, real-time apps, or whatever you're building.
             </p>
             <div className="mt-7">

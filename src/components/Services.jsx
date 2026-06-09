@@ -6,7 +6,7 @@ const ICON_MAP = { Code2, Smartphone, ShieldCheck, Zap, Database, Sparkles };
 
 export default function Services() {
   return (
-    <section className="border-t border-zinc-200 px-6 py-20 sm:px-10 sm:py-28">
+    <section className="border-t border-zinc-800 px-6 py-20 sm:px-10 sm:py-28">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-14 lg:grid-cols-[0.85fr_1.15fr]">
         <div>
           <Reveal className="mb-3">
@@ -27,14 +27,14 @@ export default function Services() {
               <Reveal
                 key={s.label}
                 delay={50 * i}
-                className="flex items-center gap-5 border-b border-zinc-200 py-5 first:border-t"
+                className="flex items-center gap-5 border-b border-zinc-800 py-5 first:border-t"
               >
                 <GlossyIcon Icon={Icon} />
                 <div>
-                  <div className="text-xl font-semibold tracking-tight text-zinc-900">{s.label}</div>
-                  <div className="text-[14px] text-zinc-500">{s.sub}</div>
+                  <div className="text-xl font-semibold tracking-tight text-zinc-100">{s.label}</div>
+                  <div className="text-[14px] text-zinc-400">{s.sub}</div>
                 </div>
-                <ArrowRight size={18} className="ml-auto text-zinc-300" />
+                <ArrowRight size={18} className="ml-auto text-zinc-700" />
               </Reveal>
             );
           })}
