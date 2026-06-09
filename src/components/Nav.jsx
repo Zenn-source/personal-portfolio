@@ -28,12 +28,12 @@ export default function Nav() {
             {PROFILE.photo ? (
               <img src={PROFILE.photo} alt={PROFILE.name} className="h-full w-full object-cover object-top" />
             ) : (
-              <span className="flex h-full w-full items-center justify-center text-[10px] font-bold text-zinc-400">
+              <span className="flex h-full w-full items-center justify-center text-[0.625rem] font-bold text-zinc-400">
                 {PROFILE.monogram}
               </span>
             )}
           </span>
-          <span className="text-[15px] font-semibold tracking-tight text-zinc-100">
+          <span className="text-[0.9375rem] font-semibold tracking-tight text-zinc-100">
             {PROFILE.name.split(" ")[0]}{" "}
             {PROFILE.name.split(" ")[1]?.[0]}.
           </span>
@@ -53,7 +53,7 @@ export default function Nav() {
               <a
                 key={l.label}
                 href={l.href}
-                className="rounded-full px-3.5 py-2 text-[14px] font-medium text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-white"
+                className="rounded-full px-3.5 py-2 text-[0.875rem] font-medium text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-white"
               >
                 {l.label}
               </a>
@@ -65,7 +65,7 @@ export default function Nav() {
           {/* Connect — outlined */}
           <a
             href="#contact"
-            className="hidden items-center rounded-full border border-zinc-600 bg-zinc-900 px-5 py-2 text-[14px] font-semibold text-zinc-100 transition-all hover:bg-zinc-800 md:inline-flex"
+            className="hidden items-center rounded-full border border-zinc-600 bg-zinc-900 px-5 py-2 text-[0.875rem] font-semibold text-zinc-100 transition-all hover:bg-zinc-800 md:inline-flex"
           >
             Connect
           </a>
@@ -92,7 +92,7 @@ export default function Nav() {
               key={l.label}
               href={l.href}
               onClick={() => setMenuOpen(false)}
-              className="block rounded-xl px-4 py-3 text-[15px] font-medium text-zinc-300 hover:bg-zinc-800"
+              className="block rounded-xl px-4 py-3 text-[0.9375rem] font-medium text-zinc-300 hover:bg-zinc-800"
             >
               {l.label}
             </a>
@@ -100,7 +100,7 @@ export default function Nav() {
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}
-            className="mt-1 block rounded-xl border border-zinc-600 px-4 py-3 text-center text-[15px] font-semibold text-zinc-100 hover:bg-zinc-800"
+            className="mt-1 block rounded-xl border border-zinc-600 px-4 py-3 text-center text-[0.9375rem] font-semibold text-zinc-100 hover:bg-zinc-800"
           >
             Connect
           </a>

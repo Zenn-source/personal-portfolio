@@ -11,12 +11,12 @@ function BrowserFrame({ project, rotate = 0 }) {
           <span className="h-2.5 w-2.5 rounded-full bg-zinc-600" />
           <span className="h-2.5 w-2.5 rounded-full bg-zinc-600" />
           <span className="h-2.5 w-2.5 rounded-full bg-zinc-600" />
-          <span className="ml-2 font-mono text-[11px] tracking-wide text-zinc-600">
+          <span className="ml-2 font-mono text-[0.6875rem] tracking-wide text-zinc-600">
             {project.url}
           </span>
         </div>
         {/* Image or gradient placeholder */}
-        <div className="relative" style={{ height: 300 }}>
+        <div className="relative" style={{ height: "18.75rem" }}>
           {project.image ? (
             <img
               src={project.image}
@@ -32,7 +32,7 @@ function BrowserFrame({ project, rotate = 0 }) {
           {/* Hover overlay */}
           <div className="absolute inset-0 flex items-center justify-center bg-black/0 transition-all duration-300 group-hover/frame:bg-black/40">
             <div className="flex items-center gap-2 translate-y-3 rounded-full border border-white/20 bg-white/10 px-4 py-2 opacity-0 backdrop-blur-sm transition-all duration-300 group-hover/frame:translate-y-0 group-hover/frame:opacity-100">
-              <span className="text-[13px] font-semibold text-white">View project</span>
+              <span className="text-[0.8125rem] font-semibold text-white">View project</span>
               <ArrowUpRight size={14} className="text-white" />
             </div>
           </div>
@@ -60,11 +60,11 @@ export default function Work() {
           <div>
             <div className="flex items-center gap-3">
               <h3 className="text-3xl font-semibold tracking-tight text-zinc-100">{featured.name}</h3>
-              <span className="rounded-full bg-white px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-zinc-900">
+              <span className="rounded-full bg-white px-2.5 py-1 font-mono text-[0.625rem] uppercase tracking-widest text-zinc-900">
                 {featured.status}
               </span>
             </div>
-            <p className="mt-4 max-w-md text-pretty text-[15px] leading-relaxed text-zinc-400">
+            <p className="mt-4 max-w-md text-pretty text-[0.9375rem] leading-relaxed text-zinc-400">
               {featured.description}
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
@@ -87,14 +87,14 @@ export default function Work() {
                     <h3 className="text-xl font-semibold tracking-tight text-zinc-100 transition-colors group-hover/card:text-white">
                       {p.name}
                     </h3>
-                    <p className="mt-1.5 max-w-sm text-pretty text-[14px] leading-relaxed text-zinc-400">
+                    <p className="mt-1.5 max-w-sm text-pretty text-[0.875rem] leading-relaxed text-zinc-400">
                       {p.description}
                     </p>
                     <div className="mt-3 flex flex-wrap gap-1.5">
                       {p.stack.map((t) => <Chip key={t}>{t}</Chip>)}
                     </div>
                   </div>
-                  <span className="mt-1 shrink-0 rounded-full border border-zinc-700 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-zinc-500">
+                  <span className="mt-1 shrink-0 rounded-full border border-zinc-700 px-2.5 py-1 font-mono text-[0.625rem] uppercase tracking-widest text-zinc-500">
                     {p.status}
                   </span>
                 </div>

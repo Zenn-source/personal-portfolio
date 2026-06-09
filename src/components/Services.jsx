@@ -32,7 +32,7 @@ export default function Services() {
                 <GlossyIcon Icon={Icon} />
                 <div>
                   <div className="text-xl font-semibold tracking-tight text-zinc-100">{s.label}</div>
-                  <div className="text-[14px] text-zinc-400">{s.sub}</div>
+                  <div className="text-[0.875rem] text-zinc-400">{s.sub}</div>
                 </div>
                 <ArrowRight size={18} className="ml-auto text-zinc-700" />
               </Reveal>

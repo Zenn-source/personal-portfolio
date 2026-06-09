@@ -3,7 +3,7 @@ export default function Ticker({ items, sep = "✦" }) {
     <div className="flex shrink-0 items-center">
       {items.map((it, i) => (
         <span key={i} className="flex items-center">
-          <span className="px-7 font-mono text-[12px] uppercase tracking-[0.2em] text-zinc-500">
+          <span className="px-7 font-mono text-[0.75rem] uppercase tracking-[0.2em] text-zinc-500">
             {it}
           </span>
           <span className="text-zinc-700">{sep}</span>

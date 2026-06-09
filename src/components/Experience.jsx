@@ -9,10 +9,10 @@ function ExperienceCard({ job, open, onToggle }) {
       <button onClick={onToggle} className="flex w-full items-center gap-4 p-5 text-left">
         <AppIcon glyph={job.glyph} size={44} />
         <div className="min-w-0 flex-1">
-          <div className="truncate text-[17px] font-semibold tracking-tight text-zinc-100">
+          <div className="truncate text-[1.0625rem] font-semibold tracking-tight text-zinc-100">
             {job.role}
           </div>
-          <div className="mt-0.5 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.1em] text-zinc-500">
+          <div className="mt-0.5 flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.15em] text-zinc-500">
             <span>{job.range}</span>
             <span className="text-zinc-700">✦</span>
             <span className="truncate">{job.org}</span>
@@ -28,10 +28,10 @@ function ExperienceCard({ job, open, onToggle }) {
       >
         <div className="min-h-0">
           <div className="border-t border-zinc-800 px-5 py-5 sm:pl-16">
-            <p className="text-[14px] font-semibold leading-relaxed text-zinc-300">{job.summary}</p>
+            <p className="text-[0.875rem] font-semibold leading-relaxed text-zinc-300">{job.summary}</p>
             <ul className="mt-3 space-y-2">
               {job.points.map((pt, j) => (
-                <li key={j} className="flex gap-2.5 text-[14px] leading-relaxed text-zinc-400">
+                <li key={j} className="flex gap-2.5 text-[0.875rem] leading-relaxed text-zinc-400">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-600" />
                   <span className="text-pretty">{pt}</span>
                 </li>

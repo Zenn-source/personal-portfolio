@@ -64,8 +64,8 @@ export function GlossyIcon({ Icon, size = 52, icon = 22 }) {
     <span
       className="inline-flex shrink-0 items-center justify-center rounded-full text-white"
       style={{
-        width: size,
-        height: size,
+        width: `${size / 16}rem`,
+        height: `${size / 16}rem`,
         background:
           "radial-gradient(120% 120% at 30% 22%, #4a4a4a 0%, #1c1c1c 45%, #050505 100%)",
         boxShadow:
@@ -81,7 +81,7 @@ export function GlossyIcon({ Icon, size = 52, icon = 22 }) {
 export function Chip({ children }) {
   return (
     <span className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800/70 px-3.5 py-1.5">
-      <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-zinc-400">
+      <span className="font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-zinc-400">
         {children}
       </span>
     </span>
@@ -113,9 +113,9 @@ export function AppIcon({ glyph, size = 48 }) {
   return (
     <span
       className="flex shrink-0 items-center justify-center rounded-2xl border border-zinc-700 bg-zinc-800 text-zinc-100 shadow-[0_6px_16px_-8px_rgba(0,0,0,0.5)]"
-      style={{ width: size, height: size }}
+      style={{ width: `${size / 16}rem`, height: `${size / 16}rem` }}
     >
-      <span className="text-[15px] font-bold tracking-tight">{glyph}</span>
+      <span className="text-[0.9375rem] font-bold tracking-tight">{glyph}</span>
     </span>
   );
 }

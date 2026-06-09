@@ -31,7 +31,7 @@ export default function About() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
                 </span>
-                <span className="font-mono text-[12px] text-zinc-300">Available for work</span>
+                <span className="font-mono text-[0.75rem] text-zinc-300">Available for work</span>
               </div>
             </div>
           </Reveal>
@@ -43,7 +43,7 @@ export default function About() {
               <TwoTone parts={[{ t: "The person " }, { t: "behind the code.", mute: true }]} />
             </h2>
 
-            <div className="mt-8 space-y-4 text-[15px] leading-relaxed text-zinc-400">
+            <div className="mt-8 space-y-4 text-[0.9375rem] leading-relaxed text-zinc-400">
               <p>
                 I'm a second-year BS Information Technology student at{" "}
                 <span className="font-medium text-zinc-200">National University Manila</span>, currently
@@ -65,16 +65,16 @@ export default function About() {
 
             {/* Education card */}
             <div className="mt-10 rounded-2xl border border-zinc-800 bg-zinc-900 p-5">
-              <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-zinc-600">Education</div>
+              <div className="font-mono text-[0.6875rem] uppercase tracking-[0.15em] text-zinc-600">Education</div>
               <div className="mt-3 flex items-start gap-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-zinc-700 bg-zinc-800 font-mono text-[11px] font-bold text-zinc-300">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-zinc-700 bg-zinc-800 font-mono text-[0.6875rem] font-bold text-zinc-300">
                   NU
                 </span>
                 <div>
-                  <div className="text-[15px] font-semibold text-zinc-100">
+                  <div className="text-[0.9375rem] font-semibold text-zinc-100">
                     BS Information Technology
                   </div>
-                  <div className="mt-0.5 text-[13px] text-zinc-400">
+                  <div className="mt-0.5 text-[0.8125rem] text-zinc-400">
                     National University Manila · 2023 – 2027
                   </div>
                 </div>
@@ -89,8 +89,8 @@ export default function About() {
                 { label: "Focus", value: "AI + Full-Stack" },
               ].map((f) => (
                 <div key={f.label} className="rounded-xl border border-zinc-800 bg-zinc-900 px-4 py-3">
-                  <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-600">{f.label}</div>
-                  <div className="mt-1 text-[13px] font-semibold text-zinc-200">{f.value}</div>
+                  <div className="font-mono text-[0.625rem] uppercase tracking-[0.12em] text-zinc-600">{f.label}</div>
+                  <div className="mt-1 text-[0.8125rem] font-semibold text-zinc-200">{f.value}</div>
                 </div>
               ))}
             </div>

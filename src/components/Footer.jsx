@@ -32,7 +32,7 @@ export default function Footer() {
 
         <div className="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2">
           <div>
-            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-600">Email</div>
+            <div className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-zinc-600">Email</div>
             <a
               href={`mailto:${PROFILE.email}`}
               className="mt-2 inline-block text-lg text-zinc-200 transition-colors hover:text-white"
@@ -41,7 +41,7 @@ export default function Footer() {
             </a>
           </div>
           <div>
-            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-600">Social</div>
+            <div className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-zinc-600">Social</div>
             <div className="mt-3 flex gap-3">
               <a
                 href={PROFILE.linkedin}
@@ -69,20 +69,20 @@ export default function Footer() {
 
         <div className="flex flex-col gap-6 py-8 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <div className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-600">Menu</div>
+            <div className="font-mono text-[0.6875rem] uppercase tracking-[0.18em] text-zinc-600">Menu</div>
             <div className="mt-3 grid grid-cols-2 gap-x-10 gap-y-2">
               {NAV.map((l) => (
                 <a
                   key={l.label}
                   href={l.href}
-                  className="text-[15px] text-zinc-300 transition-colors hover:text-white"
+                  className="text-[0.9375rem] text-zinc-300 transition-colors hover:text-white"
                 >
                   {l.label}
                 </a>
               ))}
             </div>
           </div>
-          <div className="font-mono text-[12px] text-zinc-600">© {year} {PROFILE.name}</div>
+          <div className="font-mono text-[0.75rem] text-zinc-600">© {year} {PROFILE.name}</div>
         </div>
       </div>
     </footer>

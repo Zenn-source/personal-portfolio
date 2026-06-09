@@ -21,7 +21,7 @@ function FanStack() {
     <div className="flex flex-col items-center gap-4">
       <div
         className="relative flex cursor-pointer select-none items-center justify-center"
-        style={{ height: 520, width: "100%" }}
+        style={{ height: "32.5rem", width: "100%" }}
         onClick={() => setFront((f) => (f + 1) % PROJECTS.length)}
       >
         {PROJECTS.map((project, i) => {
@@ -32,9 +32,9 @@ function FanStack() {
               key={project.name}
               className={`absolute rounded-[22px] overflow-hidden bg-gradient-to-br ${project.gradient}`}
               style={{
-                width: 380,
-                height: 460,
-                transform: `rotate(${pos.rotate}deg) translateX(${pos.tx}px) translateY(${pos.ty}px) scale(${pos.scale})`,
+                width: "23.75rem",
+                height: "28.75rem",
+                transform: `rotate(${pos.rotate}deg) translateX(${pos.tx / 16}rem) translateY(${pos.ty / 16}rem) scale(${pos.scale})`,
                 zIndex: pos.z,
                 boxShadow: isFront
                   ? "0 40px 80px -20px rgba(0,0,0,0.7)"
@@ -60,7 +60,7 @@ function FanStack() {
                 <span className="h-2.5 w-2.5 rounded-full bg-white/30" />
                 <span className="h-2.5 w-2.5 rounded-full bg-white/30" />
                 {isFront && (
-                  <span className="ml-2 font-mono text-[10px] tracking-wide text-white/60">
+                  <span className="ml-2 font-mono text-[0.625rem] tracking-wide text-white/60">
                     {project.url}
                   </span>
                 )}
@@ -111,7 +111,7 @@ function FanStack() {
 
       {/* Dot indicators + hint */}
       <div className="flex items-center gap-3">
-        <span className="font-mono text-[10px] text-zinc-600">click to explore</span>
+        <span className="font-mono text-[0.625rem] text-zinc-600">click to explore</span>
         <div className="flex gap-1.5">
           {PROJECTS.map((_, i) => (
             <button
@@ -152,7 +152,7 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
             </span>
-            <span className="text-[14px] font-medium text-zinc-300">Open to opportunities</span>
+            <span className="text-[0.875rem] font-medium text-zinc-300">Open to opportunities</span>
           </div>
 
           {/* Headline */}
@@ -168,10 +168,10 @@ export default function Hero() {
 
           {/* Sub-copy */}
           <div className="mt-8 max-w-md">
-            <p className="text-[16px] font-semibold leading-relaxed text-zinc-100">
+            <p className="text-[1rem] font-semibold leading-relaxed text-zinc-100">
               {PROFILE.tagline}
             </p>
-            <p className="mt-2 text-[16px] leading-relaxed text-zinc-400">{PROFILE.intro}</p>
+            <p className="mt-2 text-[1rem] leading-relaxed text-zinc-400">{PROFILE.intro}</p>
           </div>
 
           {/* CTAs */}
@@ -180,7 +180,7 @@ export default function Hero() {
               href={gmailHref}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3.5 text-[15px] font-semibold text-zinc-900 shadow-[0_10px_24px_-8px_rgba(255,255,255,0.15)] transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-2.5 rounded-full bg-white px-6 py-3.5 text-[0.9375rem] font-semibold text-zinc-900 shadow-[0_10px_24px_-8px_rgba(255,255,255,0.15)] transition-opacity hover:opacity-90"
             >
               <Mail size={16} />
               Get in touch
@@ -189,7 +189,7 @@ export default function Hero() {
               href={PROFILE.resume}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-full border border-zinc-700 bg-zinc-900 px-6 py-3.5 text-[15px] font-semibold text-zinc-100 transition-colors hover:bg-zinc-800"
+              className="inline-flex items-center gap-2.5 rounded-full border border-zinc-700 bg-zinc-900 px-6 py-3.5 text-[0.9375rem] font-semibold text-zinc-100 transition-colors hover:bg-zinc-800"
             >
               <Download size={16} />
               Resume

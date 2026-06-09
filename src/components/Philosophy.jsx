@@ -11,8 +11,8 @@ function AccordionItem({ item, open, onToggle }) {
         className="flex w-full items-center justify-between gap-4 py-5 text-left"
       >
         <span className="flex items-center gap-4">
-          <span className="font-mono text-[13px] text-zinc-600">{item.n}</span>
-          <span className="text-[19px] font-semibold tracking-tight text-zinc-100">{item.title}</span>
+          <span className="font-mono text-[0.8125rem] text-zinc-600">{item.n}</span>
+          <span className="text-[1.1875rem] font-semibold tracking-tight text-zinc-100">{item.title}</span>
         </span>
         <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-zinc-700 text-zinc-500">
           {open ? <Minus size={15} /> : <Plus size={15} />}
@@ -23,7 +23,7 @@ function AccordionItem({ item, open, onToggle }) {
         style={{ gridTemplateRows: open ? "1fr" : "0fr", opacity: open ? 1 : 0 }}
       >
         <div className="min-h-0">
-          <p className="pb-5 pl-9 pr-10 text-pretty text-[15px] leading-relaxed text-zinc-400">
+          <p className="pb-5 pl-9 pr-10 text-pretty text-[0.9375rem] leading-relaxed text-zinc-400">
             {item.body}
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function Philosophy() {
               <br />
               <span className="text-zinc-100">Find me on LinkedIn</span>
             </h3>
-            <p className="mt-4 text-[15px] leading-relaxed text-zinc-400">
+            <p className="mt-4 text-[0.9375rem] leading-relaxed text-zinc-400">
               Always up for a conversation about secure systems, real-time apps, or whatever you're building.
             </p>
             <div className="mt-7">
