@@ -29,26 +29,61 @@ html {
   }
 }
 
-body { margin: 0; }
+body {
+  margin: 0;
+}
 
-.pf-marquee { overflow: hidden; width: 100%; }
-.pf-marquee-track { width: max-content; animation: pfMarquee 45s linear infinite; }
-.pf-marquee:hover .pf-marquee-track { animation-play-state: paused; }
+.pf-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.pf-marquee-track {
+  width: max-content;
+  animation: pfMarquee 45s linear infinite;
+}
+
+.pf-marquee:hover .pf-marquee-track {
+  animation-play-state: paused;
+}
 
 @keyframes pfMarquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes wordIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.word-in { animation: wordIn 0.35s ease forwards; }
+
+.word-in {
+  animation: wordIn 0.35s ease forwards;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .pf-marquee-track { animation: none; }
-  .word-in { animation: none; }
+  .pf-marquee-track {
+    animation: none;
+  }
+
+  .word-in {
+    animation: none;
+  }
 }
 
-::selection { background: #fafafa; color: #09090b; }
+::selection {
+  background: #fafafa;
+  color: #09090b;
+}

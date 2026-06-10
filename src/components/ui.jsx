@@ -43,7 +43,7 @@ export function TwoTone({ parts, className = "" }) {
   return (
     <span className={className}>
       {parts.map((p, i) => (
-        <span key={i} style={{ color: p.mute ? "#52525b" : "#fafafa" }}>{p.t}</span>
+        <span key={i} style={{ color: p.mute ? "#a1a1aa" : "#fafafa" }}>{p.t}</span>
       ))}
     </span>
   );

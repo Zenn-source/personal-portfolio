@@ -5,6 +5,7 @@ import { PROFILE, NAV } from "../data/content";
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [compact, setCompact] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     let lastY = window.scrollY;
@@ -17,6 +18,30 @@ export default function Nav() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = ["experience", "work", "stack", "about", "process"];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-25% 0px -55% 0px",
+        threshold: 0,
+      }
+    );
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -49,15 +74,22 @@ export default function Nav() {
 
           {/* Desktop nav links */}
           <div className="hidden items-center gap-0.5 md:flex">
-            {NAV.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                className="rounded-full px-3.5 py-2 text-[0.875rem] font-medium text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-white"
-              >
-                {l.label}
-              </a>
-            ))}
+            {NAV.map((l) => {
+              const isActive = l.href === `#${activeSection}`;
+              return (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  className={`rounded-full px-3.5 py-2 text-[0.875rem] font-medium transition-colors ${
+                    isActive
+                      ? "bg-zinc-800 text-white font-semibold"
+                      : "text-zinc-400 hover:bg-zinc-800 hover:text-white"
+                  }`}
+                >
+                  {l.label}
+                </a>
+              );
+            })}
           </div>
 
           <span className="mx-1 hidden h-5 w-px bg-zinc-700 md:block" />
@@ -87,16 +119,23 @@ export default function Nav() {
 
       {menuOpen && (
         <div className="pointer-events-auto absolute top-[4.5rem] w-[min(92vw,300px)] rounded-2xl border border-zinc-800 bg-zinc-900 p-2 shadow-xl md:hidden">
-          {NAV.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              onClick={() => setMenuOpen(false)}
-              className="block rounded-xl px-4 py-3 text-[0.9375rem] font-medium text-zinc-300 hover:bg-zinc-800"
-            >
-              {l.label}
-            </a>
-          ))}
+          {NAV.map((l) => {
+            const isActive = l.href === `#${activeSection}`;
+            return (
+              <a
+                key={l.label}
+                href={l.href}
+                onClick={() => setMenuOpen(false)}
+                className={`block rounded-xl px-4 py-3 text-[0.9375rem] font-medium transition-colors ${
+                  isActive
+                    ? "bg-zinc-800 text-white font-semibold"
+                    : "text-zinc-300 hover:bg-zinc-800 hover:text-white"
+                }`}
+              >
+                {l.label}
+              </a>
+            );
+          })}
           <a
             href="#contact"
             onClick={() => setMenuOpen(false)}

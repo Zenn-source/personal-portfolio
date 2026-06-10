@@ -9,13 +9,21 @@ const POSITIONS = [
   { rotate:  -2, tx:   4, ty:   0, scale: 1,    z: 2 }, // front
 ];
 
-function getPos(projectIdx, frontIdx) {
-  const offset = (projectIdx - frontIdx + PROJECTS.length) % PROJECTS.length;
-  return POSITIONS[[2, 0, 1][offset]];
-}
+
 
 function FanStack() {
   const [front, setFront] = useState(0);
+
+  const visibleProjects = [];
+  if (PROJECTS.length > 0) {
+    visibleProjects.push({ project: PROJECTS[front], pos: POSITIONS[2] });
+  }
+  if (PROJECTS.length > 1) {
+    visibleProjects.push({ project: PROJECTS[(front + 1) % PROJECTS.length], pos: POSITIONS[0] });
+  }
+  if (PROJECTS.length > 2) {
+    visibleProjects.push({ project: PROJECTS[(front + 2) % PROJECTS.length], pos: POSITIONS[1] });
+  }
 
   return (
     <div className="flex flex-col items-center gap-4">
@@ -24,8 +32,7 @@ function FanStack() {
         style={{ height: "32.5rem", width: "100%" }}
         onClick={() => setFront((f) => (f + 1) % PROJECTS.length)}
       >
-        {PROJECTS.map((project, i) => {
-          const pos = getPos(i, front);
+        {visibleProjects.map(({ project, pos }) => {
           const isFront = pos.z === 2;
           return (
             <div
@@ -67,7 +74,7 @@ function FanStack() {
               </div>
 
               {/* UI skeleton — only when no image */}
-              {!project.image && (
+              {!project.image && !project.heroImage && (
                 <div className="mx-4 space-y-3 opacity-20">
                   <div className="h-8 rounded-lg bg-white/60" />
                   <div className="flex gap-2">

@@ -1,5 +1,5 @@
-export default function Ticker({ items, sep = "✦" }) {
-  const Track = () => (
+function Track({ items, sep }) {
+  return (
     <div className="flex shrink-0 items-center">
       {items.map((it, i) => (
         <span key={i} className="flex items-center">
@@ -11,13 +11,15 @@ export default function Ticker({ items, sep = "✦" }) {
       ))}
     </div>
   );
+}
 
+export default function Ticker({ items, sep = "✦" }) {
   return (
     <section aria-hidden="true" className="overflow-hidden border-y border-zinc-800 bg-zinc-900/60 py-4">
       <div className="pf-marquee flex">
         <div className="pf-marquee-track flex">
-          <Track />
-          <Track />
+          <Track items={items} sep={sep} />
+          <Track items={items} sep={sep} />
         </div>
       </div>
     </section>

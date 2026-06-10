@@ -40,7 +40,7 @@ export const PROJECTS = [
     stack: ["React", "Node.js", "Express", "MongoDB", "Flutter"],
     description:
       "A tricycle-hailing platform with a MERN admin web and Flutter mobile client, featuring neural-network demand forecasting and intelligent dispatch — coordinated with BPToda Molino, Cavite for real-world integration.",
-    href: "#",
+    href: "https://todago.app",
     gradient: "from-emerald-500 to-teal-700",
     image: "/images/todago.png",
     heroImage: "/images/todago-hero.png",
@@ -52,7 +52,7 @@ export const PROJECTS = [
     stack: ["PHP", "MySQL", "Linux"],
     description:
       "A management system built to digitize a local eatery's operations — replacing paper-based logs with digital order tracking, hardened with security testing and edge-case validation.",
-    href: "#",
+    href: "https://github.com/Zenn-source/Karensderya",
     gradient: "from-orange-400 to-rose-500",
     image: "/images/karensderya.png",
     heroImage: "/images/karensderya-hero.png",
@@ -64,7 +64,7 @@ export const PROJECTS = [
     stack: ["Python", "FastAPI", "OpenAI GPT-4o"],
     description:
       "An AI-powered healthcare ad compliance engine — uses GPT-4o to detect unsubstantiated medical claims, restricted imagery, and policy violations with severity-based scoring.",
-    href: "#",
+    href: "https://github.com/Zenn-source",
     gradient: "from-violet-500 to-indigo-700",
     image: "/images/mediguard.png",
     heroImage: "/images/mediguard-hero.png",

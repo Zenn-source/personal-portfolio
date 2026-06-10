@@ -51,7 +51,7 @@ export default function Work() {
           <ScriptLabel className="text-2xl">selected work</ScriptLabel>
         </Reveal>
         <Reveal as="h2" delay={60} className="max-w-2xl text-balance text-4xl font-semibold tracking-[-0.02em] sm:text-5xl">
-          <TwoTone parts={[{ t: "Things I've " }, { t: "shipped", mute: false }]} />
+          <TwoTone parts={[{ t: "Things I've ", mute: true }, { t: "shipped" }]} />
         </Reveal>
 
         {/* Featured */}
