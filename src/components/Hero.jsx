@@ -4,26 +4,18 @@ import { PROFILE, PROJECTS } from "../data/content";
 import { Reveal } from "./ui";
 
 const POSITIONS = [
-  { rotate: -10, tx: -28, ty: 24,  scale: 0.87, z: 0 }, // back-left
-  { rotate:   7, tx:  36, ty: -16, scale: 0.84, z: 1 }, // back-right
-  { rotate:  -2, tx:   4, ty:   0, scale: 1,    z: 2 }, // front
+  { rotate: -10, tx: -28, ty: 24, scale: 0.87, z: 0 }, // back-left
+  { rotate: 7, tx: 36, ty: -16, scale: 0.84, z: 1 }, // back-right
+  { rotate: -2, tx: 4, ty: 0, scale: 1, z: 2 }, // front
 ];
 
-
+function getPos(projectIdx, frontIdx) {
+  const offset = (projectIdx - frontIdx + PROJECTS.length) % PROJECTS.length;
+  return POSITIONS[[2, 0, 1][offset]];
+}
 
 function FanStack() {
   const [front, setFront] = useState(0);
-
-  const visibleProjects = [];
-  if (PROJECTS.length > 0) {
-    visibleProjects.push({ project: PROJECTS[front], pos: POSITIONS[2] });
-  }
-  if (PROJECTS.length > 1) {
-    visibleProjects.push({ project: PROJECTS[(front + 1) % PROJECTS.length], pos: POSITIONS[0] });
-  }
-  if (PROJECTS.length > 2) {
-    visibleProjects.push({ project: PROJECTS[(front + 2) % PROJECTS.length], pos: POSITIONS[1] });
-  }
 
   return (
     <div className="flex flex-col items-center gap-4">
@@ -32,7 +24,8 @@ function FanStack() {
         style={{ height: "32.5rem", width: "100%" }}
         onClick={() => setFront((f) => (f + 1) % PROJECTS.length)}
       >
-        {visibleProjects.map(({ project, pos }) => {
+        {PROJECTS.map((project, i) => {
+          const pos = getPos(i, front);
           const isFront = pos.z === 2;
           return (
             <div
@@ -74,7 +67,7 @@ function FanStack() {
               </div>
 
               {/* UI skeleton — only when no image */}
-              {!project.image && !project.heroImage && (
+              {!project.image && (
                 <div className="mx-4 space-y-3 opacity-20">
                   <div className="h-8 rounded-lg bg-white/60" />
                   <div className="flex gap-2">
@@ -124,9 +117,8 @@ function FanStack() {
             <button
               key={i}
               onClick={(e) => { e.stopPropagation(); setFront(i); }}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                i === front ? "w-5 bg-white/60" : "w-1.5 bg-white/20"
-              }`}
+              className={`h-1.5 rounded-full transition-all duration-300 ${i === front ? "w-5 bg-white/60" : "w-1.5 bg-white/20"
+                }`}
             />
           ))}
         </div>
@@ -159,12 +151,12 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
             </span>
-            <span className="text-[0.875rem] font-medium text-zinc-300">Open to opportunities</span>
+            <span className="text-[0.875rem] font-medium text-zinc-300">Open to work</span>
           </div>
 
           {/* Headline */}
           <h1 className="text-[3rem] font-semibold leading-[1.02] tracking-[-0.03em] sm:text-[3.6rem] lg:text-[4.2rem]">
-            <span className="text-zinc-600">Hi ✦ I'm {firstName}.</span>
+            <span className="text-zinc-600">Hi! I'm {firstName}.</span>
             <br />
             {PROFILE.title.map((line, i) => (
               <span key={i} className="block font-black text-white">
